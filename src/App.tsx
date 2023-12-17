@@ -49,7 +49,6 @@ function App() {
               element={
                 <PickAddOns
                   monthly={!!monthly}
-                  setMonthly={setMonthly}
                   ///
                   service={!!service}
                   setService={setService}
@@ -65,21 +64,14 @@ function App() {
               element={
                 <FinishingUp
                   monthly={!!monthly}
-                  setMonthly={setMonthly}
                   ////
                   arcade={!!arcade}
-                  setArcade={setArcade}
                   advanced={!!advanced}
-                  setAdvanced={setAdvanced}
                   pro={!!pro}
-                  setPro={setPro}
                   ///
                   service={!!service}
-                  setService={setService}
                   storage={!!storage}
-                  setStorage={setStorage}
                   profile={!!profile}
-                  setProfile={setProfile}
                 />
               }
             />

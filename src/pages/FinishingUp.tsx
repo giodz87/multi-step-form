@@ -5,37 +5,35 @@ import React from "react";
 import thanks from "../assets/images/icon-thank-you.svg";
 type monthlyYearly = {
   monthly: boolean;
-  setMonthly: (monthly: boolean) => void;
+
   arcade: boolean;
-  setArcade: (arcade: boolean) => void;
+
   advanced: boolean;
-  setAdvanced: (advanced: boolean) => void;
+
   pro: boolean;
-  setPro: (pro: boolean) => void;
+
   service: boolean;
-  setService: (service: boolean) => void;
+
   storage: boolean;
-  setStorage: (storage: boolean) => void;
+
   profile: boolean;
-  setProfile: (profile: boolean) => void;
 };
 
 export default function FinishingUp({
   monthly,
-  setMonthly,
+
   arcade,
-  setArcade,
+
   advanced,
-  setAdvanced,
+
   pro,
-  setPro,
+
   ////
   service,
-  setService,
+
   storage,
-  setStorage,
+
   profile,
-  setProfile,
 }: monthlyYearly) {
   const [totalCost, setTotalCost] = useState<number>(0);
   const [done, setDone] = useState<boolean>(true);
@@ -76,7 +74,7 @@ export default function FinishingUp({
     <>
       {done ? (
         <>
-          <main className="w-[343px] bg-white absolute top-[100px] right-4 px-6 flex flex-col items-start justify-center gap-6 py-8 rounded-[10px] ">
+          <main className="w-[343px] bg-white absolute top-[100px] right-4 px-6 flex flex-col items-start justify-center gap-6 py-8 rounded-[10px]  xl:gap-[35px] xl:w-[450px] xl:rounded-none xl:p-0 xl:mr-[80px] xl:top-[40px] ">
             <div>
               {arcade}
               <h2 className=" text-[24px] font-bold">Finishing up</h2>
@@ -84,16 +82,16 @@ export default function FinishingUp({
                 Double-check everything looks OK before confirming.
               </p>
             </div>
-            <section className="w-full bg-[#F8F9FF] p-[16px] flex flex-col  gap-3">
+            <section className="w-full bg-[#F8F9FF] p-[16px] flex flex-col  gap-3 xl:p-[24px]">
               <div className="flex flex-row items-center justify-between w-full">
                 <div>
                   <p className="text-[14px] font-medium">
                     {arcade ? (
-                      <p>Arcade</p>
+                      <strong>Arcade</strong>
                     ) : advanced ? (
-                      <p>Advanced</p>
+                      <strong>Advanced</strong>
                     ) : pro ? (
-                      <p>Pro</p>
+                      <strong>Pro</strong>
                     ) : (
                       ""
                     )}
@@ -104,11 +102,11 @@ export default function FinishingUp({
                 </div>
                 <p className="text-[14px] font-medium">
                   {arcade ? (
-                    <p>{monthly ? "$9/mo" : "$90/yr"}</p>
+                    <strong>{monthly ? "$9/mo" : "$90/yr"}</strong>
                   ) : advanced ? (
-                    <p>{monthly ? "$12/mo" : "$120/yr"}</p>
+                    <strong>{monthly ? "$12/mo" : "$120/yr"}</strong>
                   ) : pro ? (
-                    <p>{monthly ? "$15/mo" : "$150/yr"}</p>
+                    <strong>{monthly ? "$15/mo" : "$150/yr"}</strong>
                   ) : (
                     ""
                   )}
@@ -154,7 +152,7 @@ export default function FinishingUp({
                 ""
               )}
             </section>
-            <div className="flex flex-row items-center justify-between w-full px-[16px]">
+            <div className="flex flex-row items-center justify-between w-full px-[16px] xl:px-[24px]">
               <p className=" text-[#9699AA] text-[14px] leading-[20px] font-normal">
                 Total (per month)
               </p>
@@ -164,32 +162,38 @@ export default function FinishingUp({
             </div>
           </main>
           <div className=" flex flex-row items-center justify-between border border-[#EFF5FF]] w-full h-[72px] bg-white">
-            <button
-              onClick={() => {
-                goBack();
-              }}
-              className="text-[14px] font-medium text-[#9699AA] pl-[16px] cursor-pointer"
-            >
-              Go Back
-            </button>
+            <div className="w-full xl:w-[450px] flex justify-between ml-auto xl:mr-[80px]">
+              <button
+                onClick={() => {
+                  goBack();
+                }}
+                className="text-[14px] font-medium text-[#9699AA] pl-[16px] cursor-pointer xl:p-0"
+              >
+                Go Back
+              </button>
 
-            <button
-              onClick={() => {
-                setDone(false);
-              }}
-              //   disabled={}
-              className="rounded-[4px] bg-[#483EFF] w-[97px] h-[40px] text-white ml-auto mr-[16px] cursor-pointer"
-            >
-              Confirm
-            </button>
+              <button
+                onClick={() => {
+                  setDone(false);
+                }}
+                //   disabled={}
+                className="rounded-[4px] bg-[#483EFF] w-[97px] h-[40px] text-white ml-auto mr-[16px] cursor-pointer"
+              >
+                Confirm
+              </button>
+            </div>
           </div>
         </>
       ) : (
         <div>
-          <main className="w-[343px] bg-white absolute top-[100px] right-4 px-6 flex flex-col items-center justify-center gap-6 py-16 rounded-[10px] ">
-            <img src={thanks} alt="" className="w-[56px] h-[56px]" />
+          <main className="w-[343px] bg-white absolute top-[100px] right-4 px-6 flex flex-col items-center justify-center gap-6 py-16 rounded-[10px] xl:gap-[35px] xl:w-[450px] xl:rounded-none xl:p-0 xl:mr-[80px] xl:top-[150px]  ">
+            <img
+              src={thanks}
+              alt=""
+              className="w-[56px] h-[56px] xl:w-[80px] xl:h-[80px]"
+            />
             <div className="flex flex-col items-center justify-center text-center gap-2">
-              <h2 className="text-[24px] font-bold text-[#022959]">
+              <h2 className="text-[24px] font-bold text-[#022959] xl:text-[32px]">
                 Thank you!
               </h2>
               <p className="text-[#9699AA] text-[16px] font-normal leading-[25px]">

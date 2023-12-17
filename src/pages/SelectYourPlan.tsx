@@ -32,14 +32,16 @@ export default function SelectYourPlan({
   console.log(arcade);
   return (
     <>
-      <section className="w-[343px] bg-white absolute top-[100px] right-4 px-6 flex flex-col items-start justify-center gap-6 py-8 rounded-[10px] ">
+      <section className="w-[343px] bg-white absolute top-[100px] right-4 px-6 flex flex-col items-start justify-center gap-6 py-8 rounded-[10px] xl:gap-[32px] xl:w-[450px] xl:rounded-none xl:p-0 xl:mr-[80px] xl:top-[40px]">
         <div>
-          <h2 className=" text-[24px] font-bold">Select your plan</h2>
+          <h2 className=" text-[24px] font-bold xl:text-[32px]">
+            Select your plan
+          </h2>
           <p className="text-[16px] font-normal leading-[25px] text-[#9699AA]">
             You have the option of monthly or yearly billing.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center gap-3">
+        <div className="flex flex-col items-center justify-center gap-3 xl:flex-row ">
           <button
             onClick={() => {
               setArcade(true);
@@ -48,9 +50,9 @@ export default function SelectYourPlan({
             }}
             className={` ${
               arcade ? "border-[#483EFF]" : "border-[#D6D9E6]"
-            }   bg-white border  w-[295px] ${
-              monthly ? "h-[77px]" : "h-[99px]"
-            }  rounded-[8px] flex flex-row items-start px-3 pt-4 gap-3`}
+            }   bg-white border  w-[295px] xl:w-[138px]  ${
+              monthly ? "h-[77px] xl:h-[160px]" : "h-[99px] xl:h-[183px]"
+            }  rounded-[8px] flex flex-row items-start px-3 pt-4 gap-3 xl:flex-col xl:justify-between xl:pb-[20px]`}
           >
             <img src={Arcade} alt="" className="w-[40px] h-[40px]" />{" "}
             <div className=" text-start">
@@ -80,9 +82,9 @@ export default function SelectYourPlan({
             }}
             className={`${
               advanced ? "border-[#483EFF]" : "border-[#e6ded6]"
-            } bg-white border  w-[295px] ${
-              monthly ? "h-[77px]" : "h-[99px]"
-            } rounded-[8px] flex flex-row items-start px-3 pt-4 gap-3`}
+            } bg-white border  w-[295px] xl:w-[138px] xl:h-[160px] ${
+              monthly ? "h-[77px] xl:h-[160px]" : "h-[99px] xl:h-[183px]"
+            } rounded-[8px] flex flex-row items-start px-3 pt-4 gap-3 xl:flex-col xl:justify-between xl:pb-[20px]`}
           >
             <img src={Advanced} alt="" className="w-[40px] h-[40px]" />{" "}
             <div className=" text-start">
@@ -113,9 +115,9 @@ export default function SelectYourPlan({
             }}
             className={`${
               pro ? "border-[#483EFF]" : "border-[#D6D9E6]"
-            } bg-white border  w-[295px] ${
-              monthly ? "h-[77px]" : "h-[99px]"
-            } rounded-[8px] flex flex-row items-start px-3 pt-4 gap-3`}
+            } bg-white border  w-[295px] xl:w-[138px] xl:h-[160px] ${
+              monthly ? "h-[77px] xl:h-[160px]" : "h-[99px] xl:h-[183px]"
+            } rounded-[8px] flex flex-row items-start px-3 pt-4 gap-3 xl:flex-col xl:justify-between xl:pb-[20px]`}
           >
             <img src={Pro} alt="" className="w-[40px] h-[40px]" />{" "}
             <div className=" text-start">
@@ -161,26 +163,28 @@ export default function SelectYourPlan({
         </div>
       </section>
       <div className=" flex flex-row items-center justify-between border border-[#EFF5FF]] w-full h-[72px] bg-white">
-        <button
-          onClick={() => {
-            goBack();
-            setArcade(false);
-            setAdvanced(false);
-            setPro(false);
-          }}
-          className="text-[14px] font-medium text-[#9699AA] pl-[16px] cursor-pointer"
-        >
-          Go Back
-        </button>
-        <Link to={"/pick_add_ons"}>
+        <div className="w-full xl:w-[450px] flex justify-between ml-auto xl:mr-[80px]">
           <button
-            onClick={() => {}}
-            disabled={!arcade && !advanced && !pro}
-            className="rounded-[4px] bg-[#022959] w-[97px] h-[40px] text-white ml-auto mr-[16px] cursor-pointer"
+            onClick={() => {
+              goBack();
+              setArcade(false);
+              setAdvanced(false);
+              setPro(false);
+            }}
+            className="text-[14px] font-medium text-[#9699AA] pl-[16px] cursor-pointer xl:p-0"
           >
-            Next Step
+            Go Back
           </button>
-        </Link>
+          <Link to={"/pick_add_ons"}>
+            <button
+              onClick={() => {}}
+              disabled={!arcade && !advanced && !pro}
+              className="rounded-[4px] bg-[#022959] w-[97px] h-[40px] text-white ml-auto mr-[16px] cursor-pointer "
+            >
+              Next Step
+            </button>
+          </Link>
+        </div>
       </div>
     </>
   );
