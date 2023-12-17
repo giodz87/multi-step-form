@@ -43,7 +43,7 @@ export default function Home() {
           <div className=" relative">
             <p className="text-[12px] text-[#022959] font-normal">Name</p>
             <input
-              className="w-full rounded-[4px] h-10 border border-[#D6D9E6] pl-[16px] "
+              className="w-full rounded-[4px] h-10 border border-[#D6D9E6] pl-[16px] xl:mt-2 "
               placeholder="e.g. Stephen King"
               type="text"
               {...register("name", {
@@ -64,7 +64,7 @@ export default function Home() {
               Email Address
             </p>
             <input
-              className="w-full rounded-[4px] h-10 border border-[#D6D9E6] pl-[16px]"
+              className="w-full rounded-[4px] h-10 border border-[#D6D9E6] pl-[16px] xl:mt-2"
               placeholder="e.g. stephenking@lorem.com"
               type="text"
               {...register("email", {
@@ -85,7 +85,7 @@ export default function Home() {
               Phone Number
             </p>
             <input
-              className="w-full rounded-[4px] h-10 border border-[#D6D9E6] pl-[16px]"
+              className="w-full rounded-[4px] h-10 border border-[#D6D9E6] pl-[16px] xl:mt-2"
               placeholder="e.g. +1 234 567 890"
               type="text"
               {...register("phone", {
