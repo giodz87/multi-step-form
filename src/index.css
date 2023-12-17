@@ -15,5 +15,4 @@ body {
   justify-content: space-between;
   background: var(--BG, #eff5ff);
   height: 100vw;
-  overflow: hidden;
 }
