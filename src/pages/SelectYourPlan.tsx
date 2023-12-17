@@ -79,8 +79,8 @@ export default function SelectYourPlan({
               setPro(false);
             }}
             className={`${
-              advanced ? "border-[#483EFF]" : "border-[#D6D9E6]"
-            } bg-white border border-[#D6D9E6] w-[295px] ${
+              advanced ? "border-[#483EFF]" : "border-[#e6ded6]"
+            } bg-white border  w-[295px] ${
               monthly ? "h-[77px]" : "h-[99px]"
             } rounded-[8px] flex flex-row items-start px-3 pt-4 gap-3`}
           >
@@ -113,7 +113,7 @@ export default function SelectYourPlan({
             }}
             className={`${
               pro ? "border-[#483EFF]" : "border-[#D6D9E6]"
-            } bg-white border border-[#D6D9E6] w-[295px] ${
+            } bg-white border  w-[295px] ${
               monthly ? "h-[77px]" : "h-[99px]"
             } rounded-[8px] flex flex-row items-start px-3 pt-4 gap-3`}
           >

@@ -1,7 +1,4 @@
-import { useState } from "react";
 import bgimg from "../assets/images/bg-sidebar-mobile.svg";
-import { useLocation } from "react-router-dom";
-
 export default function background() {
   const button = [1, 2, 3, 4];
 
