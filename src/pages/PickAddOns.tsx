@@ -101,9 +101,9 @@ export default function PickAddOns({
             </p>
           </div>
           <div
-            className={`${
+            className={` ${
               profile ? "border-[#483EFF]" : "border-[#D6D9E6]"
-            } flex flex-row items-center justify-between gap-4 w-[295px] h-[62px] border border-[#D6D9E6] rounded-[8px] px-[16px] xl:w-[450px] xl:py-[18px]`}
+            } flex flex-row items-center justify-between gap-4 w-[295px] h-[62px] border  rounded-[8px] px-[16px] xl:w-[450px] xl:py-[18px]`}
           >
             <div className="flex flex-row gap-3 items-center justify-center">
               <input
@@ -148,7 +148,6 @@ export default function PickAddOns({
           </button>
           <Link to={"/finishing_up"}>
             <button
-              onClick={() => {}}
               disabled={!service && !storage && !profile}
               className="rounded-[4px] bg-[#022959] w-[97px] h-[40px] text-white ml-auto mr-[16px]"
             >

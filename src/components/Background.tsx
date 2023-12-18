@@ -1,20 +1,31 @@
 import bgimg from "../assets/images/bg-sidebar-mobile.svg";
-
+import { useLocation } from "react-router-dom";
 import bgdesk from "../assets/images/bg-sidebar-desktop.svg";
 export default function background() {
-  const button = [1, 2, 3, 4];
-
+  const buttons = [
+    { name: "/", label: "1" },
+    { name: "/select_your_plan", label: "2" },
+    { name: "/pick_add_ons", label: "3" },
+    { name: "/finishing_up", label: "4" },
+  ];
+  const location = useLocation();
+  const pathname = location.pathname;
+  console.log(buttons);
   return (
     <div className="w-full h-[761px] flex flex-col items-center justify-between bg-[#EFF5FF] relative xl:w-[940px] xl:bg-white xl:h-[600px] xl:justify-center xl:items-start xl:py-[16px] xl:pl-[16px]">
       <img src={bgimg} alt="" className="xl:hidden" />
       <img src={bgdesk} alt="" className=" hidden xl:flex" />
       <div className="flex flex-row items-center justify-center gap-[16px] absolute top-[50px] xl:flex-col xl:gap-[32px] xl:left-[48px] ">
-        {button.map((item) => (
+        {buttons.map((button) => (
           <button
-            key={item}
-            className="w-[33px] h-[33px] rounded-[50%] border border-[#fff] text-[#fff] text-[14px] font-bold"
+            key={button.label}
+            className={`w-[33px] h-[33px] rounded-[50%] border  text-[14px] font-bold ${
+              pathname === button.name
+                ? "bg-[#BEE2FD]  text-[#022959]"
+                : "border-[#fff] text-[#fff]"
+            }`}
           >
-            {item}
+            {button.label}
           </button>
         ))}
 
